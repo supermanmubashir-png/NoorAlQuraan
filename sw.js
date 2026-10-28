@@ -1,6 +1,6 @@
 /* Noor Al Quran service worker — static shell + allow-listed JSON API caching. */
 'use strict';
-const VERSION = 'noor-shell-v1.0.1';
+const VERSION = 'noor-shell-v1.2.0';
 const SHELL = [ './', './index.html', './home.html', './manifest.json', './icon.png' ];
 const API_HOST = 'api.alquran.cloud';
 
@@ -47,7 +47,7 @@ self.addEventListener('fetch', event => {
   // Only cache valid AlQuran Cloud API JSON. Audio and arbitrary external responses are never blindly cached.
   if (url.hostname === API_HOST && url.pathname.startsWith('/v1/')) {
     event.respondWith((async () => {
-      const cache = await caches.open('noor-quran-api-v1.0.1');
+      const cache = await caches.open('noor-quran-api-v1');
       try {
         const response = await fetch(request);
         if (response.ok && (response.headers.get('content-type') || '').includes('json')) {
