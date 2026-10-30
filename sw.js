@@ -1,6 +1,6 @@
 /* Noor Al Quran service worker — static shell + allow-listed JSON API caching. */
 'use strict';
-const VERSION = 'noor-shell-v1.2.0';
+const VERSION = 'noor-shell-hifz-studio-v2.1.0';
 const SHELL = [ './', './index.html', './home.html', './manifest.json', './icon.png' ];
 const API_HOST = 'api.alquran.cloud';
 
